@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-noise-opacity: 0.5;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Foco de teclado visible y consistente con la marca, nunca lo quitamos */
+:focus-visible {
+  outline: 2px solid #6c4cf1;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Fondo "humo" de la marca, recreado en CSS para el panel oscuro (auth + header) */
+.brand-smoke {
+  background-color: #0b0730;
+  background-image:
+    radial-gradient(48% 38% at 78% 18%, rgba(122, 92, 255, 0.32), transparent 60%),
+    radial-gradient(40% 32% at 15% 30%, rgba(76, 53, 173, 0.28), transparent 65%),
+    radial-gradient(55% 45% at 60% 85%, rgba(43, 30, 110, 0.55), transparent 70%),
+    linear-gradient(160deg, #0b0730 0%, #150e46 45%, #1b1257 100%);
+}
+
+/* Tabla numérica / códigos: usa la mono para alinear dígitos */
+.font-tabular {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-feature-settings: 'tnum';
+}
+
+/* Scrollbar discreto dentro de paneles con overflow (listas de productos) */
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d6c9ff transparent;
+}
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: #d6c9ff;
+  border-radius: 999px;
+}
