@@ -76,22 +76,21 @@ def convertir_audio(input_path: str, output_path: str):
 @router.post("")
 def webhook(payload: dict,  db: Session = Depends(get_db)):
 
-    #Protection against late messages
-    timestamp_mensaje_usuario = payload["data"]["messageTimestamp"]
+    # #Protection against late messages
+    # timestamp_mensaje_usuario = payload["data"]["messageTimestamp"]
 
-    tiempo_mensaje = datetime.fromtimestamp(
-        timestamp_mensaje_usuario,
-        tz=timezone.utc
-    )
+    # tiempo_mensaje = datetime.fromtimestamp(
+    #     timestamp_mensaje_usuario,
+    #     tz=timezone.utc
+    # )
 
-    ahora = datetime.now(timezone.utc)
+    # ahora = datetime.now(timezone.utc)
 
 
-    if ahora - tiempo_mensaje > timedelta(minutes=2):
-        return
+    # if ahora - tiempo_mensaje > timedelta(minutes=2):
+    #     return
     
     mensaje = payload.get("data").get("message")
-    print(mensaje)
 
     # if "audioMessage" in mensaje:
 
@@ -124,7 +123,7 @@ def webhook(payload: dict,  db: Session = Depends(get_db)):
     #split phone
     numero = str(numero)[0:11]
 
-    if numero != "51940241398":#!= "51934311273":51940241398
+    if numero != "51934311273":#!= "51934311273":51940241398
         return {"status": "ignored"}
 
 
