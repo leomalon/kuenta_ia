@@ -1,6 +1,6 @@
-# KAPO IA
+# KUENTA IA
 
-KAPO IA es un prototipo para digitalizar operaciones de inventario y ventas de pequeños negocios usando WhatsApp, inteligencia artificial y un panel web. El proyecto combina un backend en FastAPI, un frontend en Next.js y Evolution API para recibir y responder mensajes de WhatsApp.
+KUENTA IA es un prototipo para digitalizar operaciones de inventario y ventas de pequeños negocios usando WhatsApp, inteligencia artificial y un panel web. El proyecto combina un backend en FastAPI, un frontend en Next.js y Evolution API para recibir y responder mensajes de WhatsApp.
 
 ## Propuesta
 
