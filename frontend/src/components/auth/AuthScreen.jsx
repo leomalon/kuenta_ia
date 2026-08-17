@@ -33,16 +33,16 @@ export default function AuthScreen() {
     setLoading(true);
     setError(null);
     try {
-      await solicitarCodigoOtp({
-        telefono: telefonoDestino,
-        modo,
-        datosNegocio: datosNegocioForm || undefined,
-      });
-      setTelefono(telefonoDestino);
-      setDatosNegocio(datosNegocioForm || null);
+      // await solicitarCodigoOtp({
+      //   telefono: telefonoDestino,
+      //   modo,
+      //   datosNegocio: datosNegocioForm || undefined,
+      // });
+      setTelefono("993792939");
+      //setDatosNegocio(datosNegocioForm || null);
       setStep('otp');
     } catch (err) {
-      setError(err instanceof ApiError ? err.message : 'No pudimos enviar el código. Intenta de nuevo.');
+      setError(err instanceof ApiError ? err.message : 'Noo pudimos enviar el código. Intenta de nuevo.');
     } finally {
       setLoading(false);
     }
@@ -66,7 +66,7 @@ export default function AuthScreen() {
   }
 
   function handleReenviar() {
-    enviarCodigo({ telefonoDestino: telefono, datosNegocioForm: datosNegocio });
+    //enviarCodigo({ telefonoDestino: telefono, datosNegocioForm: datosNegocio });
   }
 
   function handleVolver() {
@@ -105,7 +105,7 @@ export default function AuthScreen() {
               loading={loading}
               serverError={error}
               onCrearCuenta={(form) =>
-                enviarCodigo({ telefonoDestino: form.telefono, datosNegocioForm: form })
+                enviarCodigo({ telefonoDestino: '993792939', datosNegocioForm: form })
               }
             />
           )}

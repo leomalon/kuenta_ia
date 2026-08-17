@@ -71,7 +71,7 @@ export async function obtenerProductosPorMarca(marcaId) {
   try {
     return await request(`/catalogo/marcas/${marcaId}/productos`);
   } catch (error) {
-    console.warn('[KAPO] No se pudo conectar al backend, usando productos demo.', error.message);
+    console.warn('[KUENTA] No se pudo conectar al backend, usando productos demo.', error.message);
     return PRODUCTOS_DEMO[marcaId] || [];
   }
 }
